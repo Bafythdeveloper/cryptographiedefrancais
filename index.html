@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Défi de Chiffrement</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding: 40px; }
+        .container { max-width: 600px; margin: 0 auto; border: 1px solid #ddd; padding: 20px; border-radius: 8px; }
+        #feedback { margin-top: 20px; font-weight: bold; min-height: 1.5em; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Bienvenue!</h1>
+        <h3>Pouvez-vous décrypter ce message? :</h3>
+        <p style="word-break: break-all; background: #f9f9f9; padding: 10px;">
+            db,di,de,dn,dv,de,dn,du,de,éb,éi,ée,én,év,ée,én,éu,ée,fb,fi,fe,fn,fv,fe,fn,fu,fe,ib,i^2,ie,in,iv,ie,in,iu,ie
+        </p>
+        
+        <br>
+        <h3>Vérifiez si vous avez raison!</h3>
+        <input type="text" id="user_answer1" placeholder="Votre réponse...">
+        <button id="submit_btn">Vérifier</button>
+        
+        <p id="feedback"></p>
+    </div>
+
+    <script>
+        document.getElementById('submit_btn').addEventListener('click', function() {
+            
+            const inputField = document.getElementById('user_answer1');
+            const feedback = document.getElementById('feedback');
+            const answer = inputField.value.toLowerCase().trim();
+            
+            if (answer === "bienvenue") {
+                feedback.innerText = "C'est vrai, bon travail ! Faites défiler vers le bas pour en savoir plus.";
+                feedback.style.color = "green"; 
+            } else {
+                feedback.innerText = "Ce n'est pas vrai, réessayez !";
+                feedback.style.color = "red";
+            }
+        });
+    </script>
+
+</body>
+</html>
